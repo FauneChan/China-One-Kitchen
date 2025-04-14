@@ -1,0 +1,503 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
+
+/* Background */
+.background-container {
+  background: url('images/background.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Top Bar */
+.top-bar {
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-name {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.logo-name h1 {
+  font-size: 1.8rem;
+}
+
+.top-info {
+  display: flex;
+  align-items: center;
+}
+
+.phone-and-about {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.phone-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.call-link {
+  font-size:1.5rem;
+  background: #3ba3df;
+  padding: 6px 12px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+}
+
+.call-link i {
+  margin-right: 6px;
+}
+
+.no-delivery {
+  font-size: 0.85rem;
+  color: #ffcc00;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.about-link {
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+}
+
+/* Main Section */
+.main-section {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 290px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card a {
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-label {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  padding: 10px;
+  font-size: 1.3rem;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Bottom Bar */
+.bottom-bar {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px 15%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.bottom-bar > div {
+  flex: 1 ;                /* make each section take equal width */
+  min-width: 250px;       /* prevent it from shrinking too small */
+}
+
+.review {
+  margin-bottom: 15px;
+  background: #00000000;
+  padding: 10px;
+}
+
+.bottom-bar h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.bottom-bar p {
+  font-size: 0.95rem;
+}
+
+.no-delivery-bottom {
+  font-size: 0.85rem;
+  color: #ffcc00;
+  margin-top: 8px;
+  font-style: italic;
+}
+.about-section {
+  margin-bottom: 15px;
+  background: #00000000;
+
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-info {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .phone-and-about {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bottom-bar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.welcome-message {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 90%;
+}
+
+.welcome-message h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 6em;
+  text-shadow: 1px 1px 3px #fffad1;
+  margin-bottom: 10px;
+  color: #f1600cd7;
+}
+
+.welcome-message h2 {
+  font-family:'KaiTi';
+  font-size: 2em;
+  color: #f56e20d7;
+}
+
+.specials-section {
+  background-color: rgba(255, 255, 255, 0.178);
+  padding: 60px 50px;
+  margin: 60px auto;
+  border-radius: 12px;
+  max-width: 85%;
+}
+
+.specials-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #ffcc00;
+  font-family: 'Georgia', serif;
+}
+
+.specials-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.specials-columns ul {
+  flex: 1;
+  min-width: 200px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.specials-columns li {
+  padding: 12px 20px;
+  border-bottom: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: 'Arial', sans-serif;
+}
+@media (max-width: 768px) {
+  .specials-columns {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .specials-columns ul {
+    width: 100%;
+  }
+
+  .specials-columns li {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+  }
+
+  .specials-section {
+    padding: 30px 20px;
+  }
+}
+
+.price {
+  color: yellow;
+  font-weight: bold;
+}
+
+
+
+/*Menu*/
+/* Main container for menu */
+/* background-color: rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 30px;*/
+.menu-section {
+  background-color: rgba(0, 0, 0, 0.603);
+  padding: 60px 50px;
+  margin: 60px auto;
+  border-radius: 12px;
+  max-width: 1700px;
+}
+
+.menu-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #ffcc00;
+  margin-bottom: 40px;
+  font-family: 'Georgia', serif;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns x 6 rows */
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.menu-item {
+  text-align: center;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 15px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.menu-item:hover {
+  background-color: rgba(255, 156, 43, 0.623);
+}
+
+/* Menu content headers */
+.menu-page-content h2 {
+  color: white;
+  font-size: 28px;
+  margin-top: 50px;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* dishes 图片
+*/
+
+.menu-wrapper {
+  display: flex;
+  gap: 30px;
+  align-items: stretch; /* keeps both sides the same height */
+  background-color: rgba(255, 255, 255, 0.8);
+  padding:10px 20px;
+  border-radius: 12px;
+  width:85%;
+  margin: 85px auto;
+}
+
+.menu-section {
+  flex: 2;
+}
+
+.menu-images {
+  flex: 1;
+  display: grid;
+  padding:00px 00px;
+  margin: 60px auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+.menu-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  .menu-wrapper {
+    flex-direction: column;
+  }
+
+  .menu-images {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+
+
+
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* make sure it stays above other content */
+  background-color: rgba(0, 0, 0, 0.432); /* or whatever matches your design */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* optional: adds a soft shadow */
+  backdrop-filter: blur(20px); 
+}
+body {
+  padding-top: 00px;
+}
+
+
+
+
+
+.menu-page {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 40px;
+  margin:auto;
+  margin-top:200px;
+  max-width: 80%;
+  display:flex;
+  justify-content: center; /* Centers the images horizontally */
+  align-items: center;     /* Centers the images vertically */
+  flex-wrap: wrap;         /* Allows images to wrap if needed */
+}
+
+.menu-header {
+  text-align: center;
+  color: white;
+  font-size: 36px;
+}
+
+.menu-grid2{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+  margin-top: 30px;
+  
+}
+
+.menu-item2{
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.menu-grid2 img{
+  max-width: 100%;         /* Ensures images don't overflow */
+  height: auto; 
+}
+
+
+
+
+
+.category-grid {
+  display: flex;
+  flex-wrap: wrap; /* So it wraps to the next line if it overflows */
+  gap: 15px;        /* Spacing between items */
+  justify-content: center; /* Center the items horizontally */
+  padding: 20px;
+}
+
+.category-grid a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.category-grid a:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+
+
+
+
+/*fixedscroll*/
+.menu-item2 {
+ 
+    display:none;
+    position: relative;
+    top: -80px;  /* same height as your fixed header */
+    padding-top: 80px;
+}
