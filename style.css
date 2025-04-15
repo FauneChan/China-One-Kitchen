@@ -1,0 +1,784 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
+
+/* Background */
+.background-container {
+  background: url('images/background.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Top Bar */
+.top-bar {
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* make sure it stays above other content */
+  background-color: rgba(0, 0, 0, 0.432); /* or whatever matches your design */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* optional: adds a soft shadow */
+  backdrop-filter: blur(20px); 
+}
+
+.logo-name {
+  display: flex;
+  align-items: center;
+
+}
+
+.logo {
+  width: 40px;
+  margin-right: 10px;
+  height: auto;
+}
+
+.logo-name h1 {
+  font-size: 4rem;
+  font-family: 'Caveat', cursive; /* Use a handwritten-like font */
+  font-weight: bold; /* Make the font bold */
+  font-style: italic; /* Make the font italic */
+  font-size: 40px; /* Adjust the font size */
+  color: rgb(255, 102, 0); /* Text color */
+  text-shadow: 
+    2px 2px 4px black,  
+    -2px -2px 4px black,
+    2px -2px 4px black,
+    -2px 2px 4px black;
+  margin: 0;
+}
+
+@media (max-width: 768px){
+  .logo-name h1{
+
+    font-size: 2.5rem;
+  }
+
+
+}
+
+
+.phone-and-about {
+  text-align: right;
+}
+
+.phone-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.call-link {
+  font-size:1.5rem;
+  background: #3ba3df;
+  padding: 6px 12px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+}
+
+.call-link i {
+  margin-right: 6px;
+}
+
+.no-delivery {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffcc00;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.about-link {
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+}
+
+@media (max-width: 768px){
+
+
+
+  .call-link {
+    font-size:15px;
+    background: #3ba3df;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    align-items: center;
+    text-align: center;
+
+  }
+
+  .no-delivery {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-top:8px;
+    font-style: italic;
+  }
+
+  .top-bar {
+    padding: 15px 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+ 
+  .phone-and-about {
+    text-align: right;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Main Section */
+.main-section {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 290px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card a {
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-label {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 35%;
+  background: rgba(0, 0, 0, 0.596);
+  padding: 10px;
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; 
+  font-size: 1.3rem;
+  text-align: center;
+  z-index: 2;
+}
+.card-label h1 {
+  color: #ff9900;
+  font-size: 1rem;
+}
+/* Bottom Bar */
+.bottom-bar {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px 15%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.bottom-bar > div {
+  flex: 1 ;                /* make each section take equal width */
+  min-width: 250px;       /* prevent it from shrinking too small */
+}
+
+.review {
+  margin-bottom: 15px;
+  background: #00000000;
+  padding: 10px;
+}
+.review2 {
+  margin-bottom: 15px;
+  background: #00000000;
+  padding: 10px;
+}
+.bottom-bar h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.bottom-bar p {
+  font-size: 0.95rem;
+}
+
+.no-delivery-bottom {
+  font-size: 0.85rem;
+  color: #ffcc00;
+  margin-top: 8px;
+  font-style: italic;
+}
+.about-section {
+  margin-bottom: 15px;
+  background: #00000000;
+
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+  .review2 {
+    display: none;
+  }
+  .main-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-info {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;           /* Enable Flexbox */
+    justify-content: flex-end;
+  }
+
+  .phone-and-about {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bottom-bar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 250px;
+}
+
+.welcome-message {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  border-radius: 10px;
+  margin: 100px 50px auto;
+  max-width: 90%;
+}
+
+.welcome-message h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4em;
+  text-shadow: 4px 1px 6px #303030;
+  margin-top: 40px;
+  color: rgb(255, 102, 0);
+}
+
+.welcome-message h2 {
+  font-family:'KaiTi';
+  font-size: 2em;
+  text-shadow: 4px 1px 6px #353535;
+  color: rgb(255, 102, 0);
+}
+@media (max-width: 768px){
+
+  .welcome-message h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+    text-shadow: 4px 1px 6px #303030;
+    margin-top: 60px;
+    color: rgb(255, 102, 0);
+  }
+  
+  .welcome-message h2 {
+    font-family:'KaiTi';
+    font-size: 1.5em;
+    text-shadow: 4px 1px 6px #353535;
+    color: rgb(255, 102, 0);
+  }
+
+}
+
+
+.specials-section {
+  background-color: rgba(255, 255, 255, 0.178);
+  padding: 60px 50px;
+  margin: 60px auto;
+  border-radius: 12px;
+  max-width: 85%;
+}
+
+.specials-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #ffcc00;
+  font-family: 'Georgia', serif;
+}
+
+.specials-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.specials-columns ul {
+  flex: 1;
+  min-width: 200px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.specials-columns li {
+  padding: 12px 20px;
+  border-bottom: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: 'Arial', sans-serif;
+}
+@media (max-width: 768px) {
+  .specials-columns {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .specials-columns ul {
+    width: 100%;
+  }
+
+  .specials-columns li {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+  }
+
+  .specials-section {
+    padding: 30px 20px;
+  }
+}
+
+.price {
+  color: yellow;
+  font-weight: bold;
+}
+
+
+
+/*Menu*/
+/* Main container for menu */
+/* background-color: rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 30px;*/
+
+
+.menu-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #ffcc00;
+  margin-bottom: 40px;
+  font-family: 'Georgia', serif;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns x 6 rows */
+  gap: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row on mobile */
+  }
+}
+.menu-item {
+  text-align: center;
+  font-size: 18px;
+  text-decoration: none;
+  color: rgb(210, 244, 255);
+  background-color: rgb(156, 115, 69);
+  font-weight: bold;
+  padding: 3px 3px;
+  border-radius: 10px;
+  transition: background-color 0.2s;
+}
+
+.menu-item:hover {
+  background-color: rgba(233, 138, 61, 0.877);
+}
+
+/* Menu content headers */
+.menu-page-content h2 {
+  color: white;
+  font-size: 28px;
+  margin-top: 50px;
+}
+
+/* Responsive layout */
+
+
+
+
+/* dishes 图片
+*/
+
+.menu-wrapper {
+  display: flex;
+  gap: 15px;
+  align-items: stretch; /* keeps both sides the same height */
+  background-color: rgba(255, 255, 255, 0.637);
+  padding: 0px 15px;
+  border-radius: 12px;
+  width:85%;
+  margin: 0px auto;
+}
+
+.menu-section {
+  flex: 2;
+  padding: 15px 15px;
+  background-color: rgba(34, 24, 10, 0.692);
+  padding: 60px 50px;
+  margin: 30px auto;
+  border-radius: 12px;
+  max-width: 1700px;
+}
+
+.menu-images {
+  flex: 1;
+  display: grid;
+  padding: 0;
+  margin: 30px auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px;
+}
+
+.menu-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  .menu-wrapper {
+    flex-direction: column;
+  }
+  .menu-section {
+
+    margin:15px;
+
+  }
+  .menu-images {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    margin: 15px;
+  }
+}
+
+th, td{
+  text-align: center;
+  padding:8px;
+}
+table {
+  margin: auto;
+}
+.price {
+  color: yellow;
+}
+
+
+
+
+
+
+
+
+.menu-page {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 40px;
+  margin:auto;
+  margin-top:200px;
+  max-width: 80%;
+  display:flex;
+  justify-content: center; /* Centers the images horizontally */
+  align-items: center;     /* Centers the images vertically */
+  flex-wrap: wrap;         /* Allows images to wrap if needed */
+}
+
+.menu-header {
+  text-align: center;
+  color: white;
+  font-size: 36px;
+}
+
+.menu-grid2{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+  margin-top: 30px;
+  
+}
+
+
+
+
+
+.menu-grid2 img{
+  max-width: 100%;         /* Ensures images don't overflow */
+  height: auto; 
+}
+
+
+
+
+
+.category-grid {
+  display: flex;
+  flex-wrap: wrap; /* So it wraps to the next line if it overflows */
+  gap: 15px;        /* Spacing between items */
+  justify-content: center; /* Center the items horizontally */
+  padding: 20px;
+}
+
+.category-grid a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.category-grid a:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+
+
+
+
+/*fixedscroll*/
+
+
+
+
+
+
+
+/* Basic Layout and Styling */
+
+button.collapse-btn {
+  background-color: #575757;
+  color: rgb(255, 166, 0);
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+button.collapse-btn:hover {
+  background-color: #3f3f3f;
+}
+
+/* Menu Style */
+.menu-part {
+  display: none;        
+  grid-template-columns: repeat(10, 1fr);                 /* Use CSS Grid */ /* 9 items per row */
+  grid-gap: 10px;                             /* Space between items */
+  background-color: #ffffffc0;
+  position: absolute;
+  text-align: center;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  margin-top: 100px;
+  padding: 20px 0;
+  box-sizing: border-box;
+  backdrop-filter: blur(20px);
+}
+
+.menu-part a {
+  display: block;                        /* Make the link behave as a block element */
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: bolder;
+  text-align: center;
+  align-items: center;
+  justify-content: center;   
+  color: #ff7b00;
+  text-decoration: none;
+  text-decoration-color: rgba(255, 255, 255, 0.6); /* Light color for underline */
+  border-radius: 8px;                   /* Optional: Add rounded corners */
+  background-color: #464646;            /* Slightly different shade for items */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-part a:hover {
+  background-color: #6d6d6d;            /* Slight hover effect */
+  cursor: pointer;
+  color: #ff5100;
+  text-decoration-color: white;         /* Highlight the underline on hover */
+}
+
+
+@media (max-width: 768px) {
+  .menu-part {
+    grid-template-columns: repeat(4, 1fr); /* 5 items per row on smaller screens */
+  }
+
+  .menu-part a {
+    display: block;                        /* Make the link behave as a block element */
+    padding: 10px 20px;
+    font-size: 10px;
+    font-weight: bolder;
+    text-align: center;
+    align-items: center;
+    justify-content: center;   
+    color: #ff7b00;
+    text-decoration: none;
+    text-decoration-color: rgba(255, 255, 255, 0.6); /* Light color for underline */
+    border-radius: 8px;                   /* Optional: Add rounded corners */
+    background-color: #464646;            /* Slightly different shade for items */
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+}
+
+.menu-item2{
+  color: rgb(255, 123, 0);
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  top: -80px;  /* same height as your fixed header */
+  padding-top: 80px;
+}
+
+.menu-items-card {
+  width: 50%;
+  margin: auto;
+  padding:30px auto;
+  background-color: #00000060;
+  margin-top: 30px;
+  border-radius: 20px;  /* Add border radius for rounded corners */
+  border: 2px solid rgba(0, 0, 0, 0); /* Add red outline */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  scroll-padding-top: 6rem;
+  backdrop-filter: blur(10px);
+}
+
+.menu-items-card:hover {
+  transform: scale(1.15); /* Slightly enlarge image on hover */
+  border-color: rgba(0, 0, 0, 0); /* Darken the border color on hover */
+  box-shadow: 6px 6px 16px rgba(255, 255, 255, 0.4); /* Shadow on hover */
+  z-index: 999;
+}
+
+
+@media (max-width: 768px) {
+  .menu-items-card {
+    width: 90%;
+  }
+
+  .menu-items-card:hover {
+    transform: scale(1.01); /* Slightly enlarge image on hover */
+  }
+}
+
+
+
+
+
+.about-page{
+
+  padding-top: 80px;
+}
+
+.about-box {
+  width: 60%;
+  margin: auto;
+  padding:auto;
+  margin-top: 10px;
+  background-color: #2919129f;
+  border-radius: 20px;  /* Add border radius for rounded corners */
+  border: 2px solid rgba(0, 0, 0, 0); /* Add red outline */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  scroll-padding-top: 6rem;
+  display: flex;
+  align-items: center;  /* Vertically align the image and text */
+  justify-content: start; 
+}
+
+.about-order-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.about-order-button:hover {
+  background-color: #45a049;
+}
+
+.about-text {
+  width: 60%;
+  margin: auto;
+  padding:auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;  /* Vertically align the image and text */
+  justify-content: center; 
+}
+
+#story-image {
+
+  height :300px;
+}
