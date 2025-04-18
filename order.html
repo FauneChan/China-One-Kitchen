@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>China One</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="background-container">
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <div class="logo-name">
+        <img src="images/logo.png" alt="Logo" class="logo" />
+        <h1><a href="index.html" style="text-decoration: none; color: rgb(255, 102, 0);">China One</a></h1>
+      </div>
+
+
+    
+      <form id="loginForm">
+          <input type="text" id="username" placeholder="Username" required>
+          <input type="password" id="password" placeholder="Password" required>
+          <button type="submit">Login</button>
+      </form>
+
+    </header>
+      
+
+   
+  <!-- Category Grid -->
+  <form id="orderForm" action="http://localhost:3000/submit-order" method="POST">
+    <label for="name">姓名：</label>
+    <input type="text" id="name" name="name" required><br>
+  
+    <label for="phone">电话：</label>
+    <input type="tel" id="phone" name="phone" required><br>
+  
+    <!-- 菜品板块 -->
+    <div class="menu-section">
+      <h3>主菜</h3>
+      <label for="mainDish1">芝麻鸡：</label>
+      <input type="number" id="mainDish1" name="mainDish1" min="1" value="1"> 
+      <span class="price">15.00</span><br>
+      
+      <label for="mainDish2">宫保鸡丁：</label>
+      <input type="number" id="mainDish2" name="mainDish2" min="1" value="1">
+      <span class="price">16.00</span><br>
+  
+      <label for="mainDish3">红烧牛肉：</label>
+      <input type="number" id="mainDish3" name="mainDish3" min="1" value="1">
+      <span class="price">18.00</span><br>
+  
+      <label for="mainDish4">鱼香茄子：</label>
+      <input type="number" id="mainDish4" name="mainDish4" min="1" value="1">
+      <span class="price">14.00</span><br>
+  
+      <label for="mainDish5">宫保鸡翅：</label>
+      <input type="number" id="mainDish5" name="mainDish5" min="1" value="1">
+      <span class="price">17.00</span><br>
+  
+      <label for="mainDish6">麻辣火锅：</label>
+      <input type="number" id="mainDish6" name="mainDish6" min="1" value="1">
+      <span class="price">20.00</span><br>
+    </div>
+  
+    <!-- 其他菜品板块(省略其他板块，重复同样结构) -->
+  
+    <!-- 备注 -->
+    <label for="notes">备注：</label>
+    <textarea id="notes" name="notes"></textarea><br>
+  
+    <!-- 总价显示 -->
+    <label for="totalPrice">总价：</label>
+    <span id="totalPrice">0.00</span><br>
+  
+    <!-- 提交按钮 -->
+    <button type="submit">提交订单</button>
+  </form>
+  
+
+
+
+  <!-- Menu Sections -->
+
+  
+  <script src="order.js"></script>
+
+
+
+
